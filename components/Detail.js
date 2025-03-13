@@ -4,7 +4,6 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import axios from "axios";
-import squareBg from "@/assets/Square-bg.png";
 
 export default function Detail() {
   const router = useRouter();
@@ -37,7 +36,7 @@ export default function Detail() {
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden p-4 border-2 border-amber-800">
       {/* Background Image */}
       <Image 
-        src={squareBg} 
+        src="/Images/Square-bg.png" // Add a leading slash
         alt="Background" 
         layout="fill" 
         objectFit="cover" 
