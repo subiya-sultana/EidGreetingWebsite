@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { useState, useEffect } from "react";
 
 const memes = [
@@ -21,9 +22,10 @@ export default function MemeContainer() {
   }, [isPaused]);
 
   return (
-    <div className="my-auto text-center border-2 border-cyan-700 m-4 max-w-2xl p-4 rounded-lg bg-[#B2E066]"
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
+    <div
+      className="my-auto text-center border-2 border-cyan-700 m-4 max-w-2xl p-4 rounded-lg bg-[#B2E066]"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
     >
       <div className="text-xl font-bold mb-2">Meme Container</div>
       <div
@@ -33,17 +35,29 @@ export default function MemeContainer() {
       </div>
       <div className="flex justify-around">
         <button
-          className="border-2 border-cyan-700 px-4 py-2 rounded-lg"
+          className="border-2 border-cyan-700 px-4 py-2 rounded-lg flex items-center bg-transparent"
           onClick={() => setIndex((index - 1 + memes.length) % memes.length)}
         >
-          Prev Meme
+          <img
+            src="stickers/previous.gif"
+            alt="Previous Meme"
+            className="w-20 rounded-md mr-2"
+          />
+          {/* Prev Meme */}
         </button>
-        <button className="border-2 border-red-700 px-4 py-2 rounded-lg">Like</button>
+
+        <button className="border-2 border-red-700 px-4 py-2 rounded-lg bg-transparent">Like</button>
+
         <button
-          className="border-2 border-cyan-700 px-4 py-2 rounded-lg"
+          className="border-2 border-cyan-700 px-4 py-2 rounded-lg flex items-center bg-transparent"
           onClick={() => setIndex((index + 1) % memes.length)}
         >
-          Next Meme
+          <img
+            src="stickers/next.gif" // Path to the 'next' GIF in the public folder
+            alt="Next Meme"
+            className="w-20 rounded-md mr-2" // Adjust size as needed
+          />
+          {/* Next Meme */}
         </button>
       </div>
     </div>

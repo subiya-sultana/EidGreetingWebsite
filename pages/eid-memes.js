@@ -7,23 +7,23 @@ export default function EidMemes() {
     return (
         <>
             <div
-                className="min-h-screen flex flex-col items-center relative"
+                className="min-h-screen w-full flex flex-col items-center justify-center relative"
                 style={{
                     backgroundImage: "url('/stickers/StarsShine2.gif')",
-                    backgroundSize: "350px", // Keeps each star distinct
+                    backgroundSize: "350px",
                     backgroundPosition: "center",
                     backgroundRepeat: "repeat",
-
                 }}
             >
                 {/* Background Overlay */}
-                <div className="absolute inset-0 bg-lime-200 opacity-50"></div>
+                <div className="absolute w-full h-full bg-lime-200 opacity-50"></div>
 
                 {/* Content */}
-                <div className="relative z-10 text-white text-center">
-                    <h1 className="text-red text-2xl font-bold my-4">Eid MEMES HERE</h1>
+                <div className="relative z-10 text-rose-600 text-center w-full px-4">
+                    <h1 className="text-3xl font-bold my-4 bounce-top">Halal Laughs Only: Eid Edition!<i className="fi fi-sr-rewind"></i></h1>
                     <Warning />
-                    <div className="flex justify-center">
+                    <br/>
+                    <div className="flex justify-center w-full">
                         <MemeContainer />
                     </div>
                     <div className="p-4 border-2 border-red-400 mt-4">
