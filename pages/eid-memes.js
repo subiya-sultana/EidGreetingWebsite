@@ -20,7 +20,7 @@ export default function EidMemes() {
 
                 {/* Content */}
                 <div className="relative z-10 text-rose-600 text-center w-full px-4">
-                    <h1 className="text-3xl font-bold my-4 bounce-top">Halal Laughs Only: Eid Edition!<i className="fi fi-sr-rewind"></i></h1>
+                    <h1 className="text-3xl font-bold my-4 bounce-top">Halal Laughs Only: Eid Edition!</h1>
                     <Warning />
                     <br/>
                     <div className="flex justify-center w-full">

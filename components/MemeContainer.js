@@ -2,10 +2,24 @@
 import { useState, useEffect } from "react";
 
 const memes = [
-  "https://i.imgflip.com/1bij.jpg",
-  "https://i.imgflip.com/26am.jpg",
-  "https://i.imgflip.com/30b1gx.jpg",
-  "https://i.imgflip.com/2/1otk96.jpg",
+  "/Memes/1.png",
+  "/Memes/2.png",
+  "/Memes/3.png",
+  "/Memes/4.png",
+  "/Memes/5.png",
+  "/Memes/6.png",
+  "/Memes/7.png",
+  "/Memes/8.png",
+  "/Memes/9.png",
+  "/Memes/10.png",
+  "/Memes/11.png",
+  "/Memes/12.png",
+  "/Memes/13.png",
+  "/Memes/14.png",
+  "/Memes/15.png",
+  "/Memes/16.png",
+  "/Memes/17.png",
+  "/Memes/18.png",
 ];
 
 export default function MemeContainer() {
@@ -23,43 +37,69 @@ export default function MemeContainer() {
 
   return (
     <div
-      className="my-auto text-center border-2 border-cyan-700 m-4 max-w-2xl p-4 rounded-lg bg-[#B2E066]"
+      className="my-auto text-center border-2 border-rose-700 max-w-lg rounded-xl shadow-xl bg-rose-200 overflow-hidden"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      <div className="text-xl font-bold mb-2">Meme Container</div>
-      <div
-        className="border-2 border-cyan-700 m-4 h-70 flex justify-center items-center p-2"
-      >
-        <img src={memes[index]} alt="Meme" className="max-w-full h-64 rounded-lg" />
+
+      {/* Title bar */}
+      <div className="flex justify-between items-center bg-rose-300 px-4 py-2 rounded-t-xl border-b border-rose-700 shadow-md">
+        {/* Left - File Icon & Name */}
+        <div className="flex items-center space-x-2">
+          <i className="fi fi-rr-file-code text-rose-900"></i>
+          <p className="text-rose-900 font-semibold text-xl sm:text-2xl">EidMemes.js</p>
+        </div>
+
+        {/* Right - Window Buttons */}
+        <div className="flex space-x-2">
+          <div className="w-7 h-6 flex items-center justify-center bg-rose-800 rounded-md shadow-md cursor-pointer hover:bg-rose-700 transition-all">
+            <i className="fi fi-rr-window-minimize text-white text-sm"></i>
+          </div>
+          <div className="w-7 h-6 flex items-center justify-center bg-rose-800 rounded-md shadow-md cursor-pointer hover:bg-rose-700 transition-all">
+            <i className="fi fi-rr-window-restore text-white text-sm"></i>
+          </div>
+          <div className="w-7 h-6 flex items-center justify-center bg-rose-800 rounded-md shadow-md cursor-pointer hover:bg-rose-700 transition-all">
+            <i className="fi fi-rr-rectangle-xmark text-white text-sm"></i>
+          </div>
+        </div>
       </div>
-      <div className="flex justify-around">
+
+
+      {/* Meme container */}
+      <div className="border-2 border-rose-700 m-4 mb-1 rounded-lg bg-rose-200 shadow-md">
+        <img
+          src={memes[index]}
+          alt="Meme"
+          className="max-w-full max-h-full rounded-lg shadow-md"
+        />
+      </div>
+
+      {/* Meme buttons */}
+      <div className="flex justify-around px-4 py-2 my-2">
+        {/* Rewind Button */}
         <button
-          className="border-2 border-cyan-700 px-4 py-2 rounded-lg flex items-center bg-transparent"
+          className="cursor-pointer border border-rose-700 rounded-lg px-3 pt-1 bg-lime-200 hover:bg-lime-300 transition-all flex justify-center items-center space-x-1 animate-rewind"
           onClick={() => setIndex((index - 1 + memes.length) % memes.length)}
         >
-          <img
-            src="stickers/previous.gif"
-            alt="Previous Meme"
-            className="w-20 rounded-md mr-2"
-          />
-          {/* Prev Meme */}
+          <i className="fi fi-sr-rewind text-rose-700 text-2xl"></i>
         </button>
 
-        <button className="border-2 border-red-700 px-4 py-2 rounded-lg bg-transparent">Like</button>
+        {/* Heart Button */}
+        <button className="cursor-pointer border border-red-400 px-3 pt-1 rounded-lg bg-rose-300 hover:bg-rose-400 transition-all flex justify-center items-center animate-heart">
+          <i className="fi fi-sr-heart text-rose-900 text-2xl"></i>
+        </button>
 
+        {/* Forward Button */}
         <button
-          className="border-2 border-cyan-700 px-4 py-2 rounded-lg flex items-center bg-transparent"
+          className="cursor-pointer border border-rose-700 rounded-lg px-3 pt-1 bg-lime-200 hover:bg-lime-300 transition-all flex justify-center items-center space-x-1 animate-forward"
           onClick={() => setIndex((index + 1) % memes.length)}
         >
-          <img
-            src="stickers/next.gif" // Path to the 'next' GIF in the public folder
-            alt="Next Meme"
-            className="w-20 rounded-md mr-2" // Adjust size as needed
-          />
-          {/* Next Meme */}
+          <i className="fi fi-sr-forward text-rose-700 text-2xl"></i>
         </button>
       </div>
+
+
+
     </div>
   );
 }
