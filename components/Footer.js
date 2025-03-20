@@ -17,7 +17,7 @@ export default function Footer() {
       </div>
 
       {/* Credits & Attribution Section */}
-      <div className="flex justify-center items-center mt-2 text-xs">
+      {/* <div className="flex justify-center items-center mt-2 text-xs">
         <div className="mr-4 font-semibold">Credits & Attribution:</div>
         <a
           href="https://www.flaticon.com/free-animated-icons/previous"
@@ -34,7 +34,8 @@ export default function Footer() {
         >
             Next animated icons created by Freepik - Flaticon
         </a>
-      </div>
+      </div> */}
+      
     </div>
   );
 }

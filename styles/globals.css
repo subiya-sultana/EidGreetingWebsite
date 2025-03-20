@@ -38,29 +38,6 @@ h1{
   font-family: 'Hole-Hearted', sans-serif;
 }
 
-/* @keyframes moveBorder {
-  0% {
-    border-top-color: transparent;
-    border-right-color: transparent;
-    border-bottom-color: transparent;
-    border-left-color: transparent;
-  }
-  100% {
-    border-top-color: #f59e0b; 
-    border-right-color: #f59e0b;
-    border-bottom-color: #f59e0b;
-    border-left-color: #f59e0b;
-  }
-}
-
-.animate-move {
-  animation: moveBorder 1s linear infinite;
-  border-color: transparent;
-} */
-
-
-
-
 @keyframes moveBorder {
   0% {
     background-position: 0 0, 100% 100%, 0 100%, 100% 0;
