@@ -79,13 +79,28 @@ export default function Greeting() {
                 
 
                 <div className="flex flex-col sm:flex-row gap-4 my-6">
-                    <Link href="/eid-memes" prefetch={false} className="cursor-pointer bg-gradient-to-r from-green-500 to-lime-400 text-white px-6 py-3 text-lg font-bold rounded-full shadow-md transition-all duration-300 hover:shadow-lg hover:scale-105 text-center">
-                        Eid Memes 🎭
+                    <Link href="/eid-memes" prefetch={false} className="group">
+                        <span className="cursor-pointer bg-gradient-to-r from-green-500 to-lime-400 text-white px-6 py-3 text-lg font-bold rounded-full shadow-md transition-all duration-300 hover:shadow-lg hover:scale-105 block text-center">
+                            Eid Memes 🎭
+                        </span>
                     </Link>
-                    <Link href="/eid-surprise" prefetch={false} className="cursor-pointer bg-gradient-to-r from-yellow-500 to-amber-400 text-white px-6 py-3 text-lg font-bold rounded-full shadow-md transition-all duration-300 hover:shadow-lg hover:scale-105 text-center">
-                        Your Eid Surprise 🎁
+
+                    <Link href="/eid-surprise" prefetch={false} className="group">
+                        <span className="cursor-pointer bg-gradient-to-r from-yellow-500 to-amber-400 text-white px-6 py-3 text-lg font-bold rounded-full shadow-md transition-all duration-300 hover:shadow-lg hover:scale-105 block text-center">
+                            Your Eid Surprise 🎁
+                        </span>
                     </Link>
+
                 </div>
+
+                <div className="p-4 border-2 border-red-400 mt-4">
+                    <Link
+                        href="/eid-surprise"
+                        className="bg-lime-500 text-white hover:opacity-80 px-8 py-2 rounded-full cursor-pointer"
+                    >
+                        Your Eid Surprise !!
+                    </Link>
+                </div>                
 
 
 
