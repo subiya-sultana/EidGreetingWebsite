@@ -36,7 +36,7 @@ export default function Detail() {
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden p-4 border-2 border-amber-800">
       {/* Background Image */}
       <Image 
-        src="/Images/Square-bg.png" // Add a leading slash
+        src="/Square-bg.png"
         alt="Background" 
         layout="fill" 
         objectFit="cover" 
