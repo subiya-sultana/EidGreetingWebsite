@@ -8,7 +8,7 @@ export default function Disclamer() {
                 <li>Excessive AWESOMENESS 😎 ( side effects may include laughter and excessive clicking ).</li>
                 <li>Autoplay that refuses to ask for permission ( headphone users, you’ve been warned!! 🎧🔊 )</li>
                 <li>Silly Sound effects ( because silence is boring, and so am I. 🤡🎶 )</li>
-                <li>A complete lack of seriousness ( if you're looking for something professional, you took a wrong turn. 🚧😂)</li>
+                <li>A complete lack of seriousness ( if you are looking for something professional, you took a wrong turn. 🚧😂)</li>
             </ul>
             <p>
                 Also, if any image, audio or other media belongs to you and you want credit or removal, just let me know!
