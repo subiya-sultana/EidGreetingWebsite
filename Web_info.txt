@@ -7,8 +7,21 @@
 7. GUEST BOOK: https://cloverbell.neocities.org/
 
 
+NOW: 
+1. AUDIOS
+2. FAVICON
+3. ATM STYLE
+4. DISCLAMER
+5. BACKEND
+6. MEME LIKE BUTTON IN DB
+7. ATM USERS IN DB
+8. TOTAL NUMBER OF UNIQUE VISITS
+
+
 RESOURCES:
 font: Miltonian Tattoo , Kavoon, Frijole, Oi, Fascinate Inline
+
+
 
 
 Moon: 

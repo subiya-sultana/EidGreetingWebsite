@@ -5,6 +5,7 @@ import { useSearchParams } from "next/navigation";
 import Footer from "@/components/Footer";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import MyButton from "@/components/MyButton";
 
 export default function Greeting() {
     const searchParams = useSearchParams();
@@ -41,7 +42,7 @@ export default function Greeting() {
                 }}
             >
                 {/* Background Overlay */}
-                <div className="absolute w-full h-full bg-lime-200 opacity-42"></div>
+                <div className="absolute w-full h-full bg-lime-200 opacity-50 mix-blend-multiply pointer-events-none"></div>
 
                 {/* Laterns animations */}
                 <div
@@ -68,42 +69,20 @@ export default function Greeting() {
                     </div>
                     {/* Eid Message */}
                     <div className="flex justify-center items-center my-2">
-                        <div className="rounded-2xl bg-lime-200 sm:w-2/3 sm:text-center p-6 shadow-lg">
-                            <h1 className="text-4xl font-bold text-rose-600 mb-3 bounce-top">Hello, {username}!</h1>
+                    <div className="rounded-2xl bg-rose-200/50 backdrop-blur-xs sm:w-2/3 sm:text-center p-6 shadow-lg border border-white/30">
+                        <h1 className="text-4xl font-bold text-rose-600 mb-3 bounce-top">Hello, {username}!</h1>
                             <p className="text-xl text-rose-500 mt-4 sm:px-4 leading-relaxed tracking-wider font-bold font-emilys-candy whitespace-pre-line">{text}</p>
                         </div>
                     </div>
                 </div>
 
                 {/* Buttons */}
-                
-
-                <div className="flex flex-col sm:flex-row gap-4 my-6">
-                    <Link href="/eid-memes" prefetch={false} className="group">
-                        <span className="cursor-pointer bg-gradient-to-r from-green-500 to-lime-400 text-white px-6 py-3 text-lg font-bold rounded-full shadow-md transition-all duration-300 hover:shadow-lg hover:scale-105 block text-center">
-                            Eid Memes 🎭
-                        </span>
-                    </Link>
-
-                    <Link href="/eid-surprise" prefetch={false} className="group">
-                        <span className="cursor-pointer bg-gradient-to-r from-yellow-500 to-amber-400 text-white px-6 py-3 text-lg font-bold rounded-full shadow-md transition-all duration-300 hover:shadow-lg hover:scale-105 block text-center">
-                            Your Eid Surprise 🎁
-                        </span>
-                    </Link>
-
+                <div className="flex flex-col sm:flex-row gap-4 my-10 mb-14">
+                    <MyButton BtnName="Eid Memes 😆" ReferTo="/eid-memes" />
+                    {/* <MyButton BtnName="Eid Greeting ✨🌙" ReferTo="/Greeting" /> */}
+                    <MyButton BtnName="Your Eid Surprise 🎁" ReferTo="/eid-surprise" />
                 </div>
-
-                <div className="p-4 border-2 border-red-400 mt-4">
-                    <Link
-                        href="/eid-surprise"
-                        className="bg-lime-500 text-white hover:opacity-80 px-8 py-2 rounded-full cursor-pointer"
-                    >
-                        Your Eid Surprise !!
-                    </Link>
-                </div>                
-
-
-
+    
             </div>
             <Footer />
         </>
