@@ -1,5 +1,6 @@
 import "@/styles/globals.css";
 import { Emilys_Candy, Geist_Mono } from "next/font/google";
+import Head from "next/head";
 
 const emilysCandy = Emilys_Candy({
   variable: "--font-emilys-candy",
@@ -14,8 +15,13 @@ const geistMono = Geist_Mono({
 
 export default function App({ Component, pageProps }) {
   return (
-    <div className={`${emilysCandy.variable} ${geistMono.variable}`}>
-      <Component {...pageProps} />
-    </div>
+    <>
+      <Head>
+      <link rel="icon" type="image/gif" href="/stickers/favicon.gif" />
+    </Head>
+      <div className={`${emilysCandy.variable} ${geistMono.variable}`}>
+        <Component {...pageProps} />
+      </div>
+    </>
   );
 }
