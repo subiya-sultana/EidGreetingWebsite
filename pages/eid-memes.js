@@ -3,11 +3,8 @@ import MemeContainer from "@/components/MemeContainer";
 import MyButton from "@/components/MyButton";
 import Warning from "@/components/Warning";
 import Head from "next/head";
-import { useUser } from "./_app"; 
 
 export default function EidMemes() {
-    const { user, loading } = useUser();
-
     return (
         <>
             <Head>
@@ -32,21 +29,6 @@ export default function EidMemes() {
                     <h1 className="text-3xl font-bold my-4 bounce-top drop-shadow-[1px_2px_0px_#4b5563] tracking-widest">
                         Halal Laughs Only: Eid Edition!
                     </h1>
-
-                    {/* Display user details */}
-                    <div className="text-lg text-gray-700 mt-4">
-                        {loading ? (
-                            <p>Loading user data...</p>
-                        ) : user ? (
-                            <div className="bg-rose-100 border-2 border-rose-400 p-4 rounded-lg shadow-md">
-                                <p><strong>Email:</strong> {user.email}</p>
-                                <p><strong>Visit Count:</strong> {user.visitCount}</p>
-                                <p><strong>Usernames:</strong> {user.usernames.join(", ")}</p>
-                            </div>
-                        ) : (
-                            <p>No user found.</p>
-                        )}
-                    </div>
 
                     <Warning 
                         title="Warning:" 
