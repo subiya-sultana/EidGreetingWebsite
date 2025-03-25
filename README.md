@@ -1,5 +1,4 @@
 
-```md
 # 🎉 Eid Celebration Website 🎉
 
 This is a **Next.js app** deployed on **Vercel**, featuring multiple pages to make Eid more fun and interactive.
@@ -10,11 +9,11 @@ This is a **Next.js app** deployed on **Vercel**, featuring multiple pages to ma
 - **Eid Memes Page** 😂 – A collection of fun Eid-related memes.
 - **Eid Surprise Page** 🎁 – A special surprise for users.
 
-🔗 **Project Deployed On:** [Eid Greeting Website](https://eid-greeting-website.vercel.app/)
+🔗 **Project Deployed On:** https://eid-greeting-website.vercel.app/
 
 ---
 
-## 🚀 Running the Project Locally
+## 🚀 Follow these steps to run project locally
 
 ### 1️⃣ Clone the Repository
 ```sh

@@ -31,6 +31,7 @@ const memes = [
 export default function MemeContainer() {
   const [index, setIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [memeLiked, setMemeLiked] = useState(false);
 
   useEffect(() => {
     if (!isPaused) {
@@ -92,7 +93,7 @@ export default function MemeContainer() {
 
         {/* Heart Button */}
         <button className="cursor-pointer border border-red-400 px-3 pt-1 rounded-lg bg-rose-300 hover:bg-rose-400 transition-all flex justify-center items-center animate-heart">
-          <i className="fi fi-sr-heart text-rose-900 text-2xl"></i>
+          <i className={`fi ${memeLiked ? "fi-sr-heart" : "fi-rr-heart"} text-rose-900 text-2xl`} onClick={() => setMemeLiked(true)} ></i> 
         </button>
 
         {/* Forward Button */}
@@ -100,8 +101,8 @@ export default function MemeContainer() {
           className="cursor-pointer border border-rose-700 rounded-lg px-3 pt-1 bg-lime-200 hover:bg-lime-300 transition-all flex justify-center items-center space-x-1 animate-forward"
           onClick={() => setIndex((index + 1) % memes.length)}
         >
-          <i className="fi fi-sr-forward text-rose-700 text-2xl"></i>
-        </button>
+            <i className="fi fi-sr-forward text-rose-700 text-2xl"></i>       
+          </button>
       </div>
 
 

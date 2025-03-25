@@ -90,7 +90,7 @@ export default function EidSurprise() {
                     <h1 className="text-3xl font-bold my-4 bounce-top drop-shadow-[1px_2px_0px_#4b5563] tracking-widest">🎉 Eidi ATM Machine - The Ultimate Eid Surprise! 🎁</h1>
                     <Warning title="BE AWARE:" message="💸This ATM has a mind of its own,🤯 and generosity is not in its programming!😏 Nor in the programmer!😎 Go on, try your luck and see what happens! 😉" />
                 
-
+                    {/* atm machine here */}
                     <div className="relative w-full max-w-sm h-[550px] my-6 sm:my-10 mx-auto bg-gradient-to-b from-rose-300 to-rose-200 rounded-xl p-4 pt-6 flex flex-col items-center border-4 border-rose-400 shadow-md shadow-rose-500">
                         <div className="w-full h-1/2 bg-gray-100 rounded-lg text-center flex flex-col justify-center border-[3px] border-gray-300 shadow-md shadow-gray-400 overflow-hidden font-geist-mono p-3 relative">
                             {!fullMessage ? (

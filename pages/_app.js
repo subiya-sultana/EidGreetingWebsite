@@ -17,8 +17,8 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-      <link rel="icon" type="image/gif" href="/stickers/favicon.gif" />
-    </Head>
+        <link rel="icon" type="image/gif" href="/stickers/favicon.gif" />
+      </Head>
       <div className={`${emilysCandy.variable} ${geistMono.variable}`}>
         <Component {...pageProps} />
       </div>

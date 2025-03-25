@@ -1,40 +1,39 @@
 import connectDB from "@/lib/db";
-import User from "@/models/UserInfo";
+import UserInfo from "@/models/UserInfo";
 
 export default async function handler(req, res) {
-    if (req.method === "POST") {
-        try {
-            await connectDB();
-            const { username, email } = req.body;
+    try {
+        await connectDB(); // Ensure DB is connected
 
-            if (!username || !email) {
-                return res.status(400).json({ error: "Enter Username and email." });
-            }
-
-            let user = await User.findOne({ email });
-
-            if (user) {
-                // If `username` is a string (due to old data), convert it to an array
-                if (typeof user.username === "string") {
-                    user.username = [user.username]; 
-                }
-
-                // Push new username, allowing duplicates
-                user.username.push(username);
-                await user.save();
-            } else {
-                // Create new user with username as an array
-                user = new User({ username: [username], email });
-                await user.save();
-            }
-
-            return res.status(201).json({ message: "User processed", user });
-        } catch (error) {
-            console.error("Error processing user:", error);
-            return res.status(500).json({ error: "Internal Server Error" });
+        if (req.method !== "POST") {
+            return res.status(405).json({ message: "Method Not Allowed" });
         }
-    } else {
-        res.setHeader("Allow", ["POST"]);
-        res.status(405).json({ error: `Method ${req.method} Not Allowed` });
+
+        const { email, username } = req.body;
+
+        if (!email || !username) {
+            return res.status(400).json({ message: "Email and username are required" });
+        }
+
+        const normalizedEmail = email.toLowerCase();
+
+        const updatedUser = await UserInfo.findOneAndUpdate(
+            { email: normalizedEmail },
+            {
+                $addToSet: { usernames: username }, // Ensures username isn't duplicated
+                $inc: { visitCount: 1 }, // Increment visit count
+                $set: { lastVisit: new Date() } // Update last visit time
+            },
+            { new: true, upsert: true } // Create user if not exists
+        );
+
+        return res.status(updatedUser.visitCount === 1 ? 201 : 200).json({
+            message: updatedUser.visitCount === 1 ? "User created" : "User updated",
+            user: updatedUser
+        });
+
+    } catch (error) {
+        console.error("Error in /api/users:", error);
+        return res.status(500).json({ message: "Internal Server Error", error });
     }
 }
