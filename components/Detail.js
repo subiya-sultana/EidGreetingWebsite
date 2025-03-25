@@ -1,4 +1,5 @@
-"use client"; // Needed for Next.js App Router hooks
+// This component will get username and email and save it on MongoDb
+"use client";
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -18,29 +19,30 @@ export default function Detail() {
       setLoading(true);
 
       try {
-         const res = await axios.post("/api/users", { 
-            username: formData.name, 
+         const res = await axios.post("/api/users", {
+            username: formData.name,
             email: formData.email.toLowerCase()
          });
 
          console.log(res.data);
          if (res.status === 200 || res.status === 201) {
-            router.push( `/Greeting?username=${encodeURIComponent(formData.name)}` );
+            router.push(`/Greeting?username=${encodeURIComponent(formData.name)}`);
          }
-      } 
+      }
       catch (error) {
          alert("Error: " + (error.response?.data?.message || "Something went wrong"));
-      } 
+      }
       finally {
          setLoading(false);
       }
    };
 
    return (
+
       <div
          className="min-h-screen w-full flex flex-col items-center justify-center relative"
          style={{
-            backgroundImage: "url('/stickers/StarsShine2.gif')",
+            backgroundImage: "url('/stickers/StarsShine.gif')",
             backgroundSize: "350px",
             backgroundPosition: "center",
             backgroundRepeat: "repeat",
@@ -50,7 +52,7 @@ export default function Detail() {
 
          <div className="z-10 w-full sm:w-2/3 md:w-1/2 m-auto px-3">
             <div className="my-auto text-center border-2 border-rose-700 rounded-xl shadow-xl bg-gradient-to-b from-rose-300 to-rose-200 overflow-hidden">
-               
+
                {/* Title Bar */}
                <div className="flex justify-between items-center bg-rose-300 px-4 py-2 rounded-t-xl border-b border-rose-700 shadow-md">
                   <div className="flex items-center space-x-2">
@@ -92,7 +94,7 @@ export default function Detail() {
                         disabled={loading}
                         className={`bg-rose-500 text-white hover:opacity-80 px-8 py-2 rounded-md cursor-pointer ${loading ? "opacity-50 cursor-not-allowed" : ""}`}
                      >
-                        { loading ? "Submitting..." : "Proceed.." }
+                        {loading ? "Submitting..." : "Proceed"}
                      </button>
                   </form>
                </div>
@@ -100,5 +102,6 @@ export default function Detail() {
             </div>
          </div>
       </div>
+
    );
 }
