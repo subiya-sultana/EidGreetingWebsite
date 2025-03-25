@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Footer from "@/components/Footer";
 import MyButton from "@/components/MyButton";
 import Warning from "@/components/Warning";
+import Head from "next/head";
 
 export default function EidSurprise() {
     const [name, setName] = useState("");
@@ -27,7 +28,7 @@ export default function EidSurprise() {
 
         "🤩 Eidi successfully sent! But… due to a small technical glitch, it has been redirected to my account instead of yours. 😌 Don't worry, I'll spend it wisely (on snacks).",
 
-        "💰 Want Eidi? Try these simple steps: Step 1: Get a job. Step 2: Accept reality. Step 3: Stop expecting free money. Congratulations, you are now financially independent!💀", 
+        "💰 Want Eidi? Step 1: Get a job. Step 2: Accept reality. Step 3: Stop expecting free money. Congratulations, you are now financially independent and you don't need eidi💀", 
         
         "😑 Aren't you ashamed? You are supposed to give me Eidi,🙄 not the other way around! Reverse transaction initiated 😝 - Now be a good person and hand over mine instead.🤑",
 
@@ -41,7 +42,7 @@ export default function EidSurprise() {
             return;
         }
         const randomResponse = responses[Math.floor(Math.random() * responses.length)] || "";
-        setFullMessage(`Heeyy ${name},<br/>${randomResponse}`);
+        setFullMessage( `Heeyy ${name},<br/>${randomResponse}`);
         setWithdrawn(true);
     };
 
@@ -69,6 +70,11 @@ export default function EidSurprise() {
 
     return (
         <>
+            <Head>
+                <title>Eid Surprise For You</title>
+                <meta name="description" content="The ultimate eid surprise for you" />
+            </Head>
+
             <div className="relative min-h-screen flex flex-col items-center justify-center text-center px-6"
                 style={{
                     backgroundImage: "url('/stickers/MoneyRain.gif')",
@@ -81,7 +87,7 @@ export default function EidSurprise() {
                 <div className="absolute w-full h-full bg-lime-200 opacity-75 pointer-events-none"></div>
 
                 <div className="z-10">
-                    <h1 className="text-3xl font-bold my-4 bounce-top drop-shadow-[2px_1px_0px_#4b5563] tracking-widest">🎉 Eidi ATM Machine - The Ultimate Eid Surprise! 🎁</h1>
+                    <h1 className="text-3xl font-bold my-4 bounce-top drop-shadow-[1px_2px_0px_#4b5563] tracking-widest">🎉 Eidi ATM Machine - The Ultimate Eid Surprise! 🎁</h1>
                     <Warning title="BE AWARE:" message="💸This ATM has a mind of its own,🤯 and generosity is not in its programming!😏 Nor in the programmer!😎 Go on, try your luck and see what happens! 😉" />
                 
 

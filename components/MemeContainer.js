@@ -20,6 +20,12 @@ const memes = [
   "/Memes/16.png",
   "/Memes/17.png",
   "/Memes/18.png",
+  "/Memes/19.png",
+  "/Memes/20.png",
+  "/Memes/21.png",
+  "/Memes/22.png",
+  "/Memes/23.png",
+  "/Memes/24.png",
 ];
 
 export default function MemeContainer() {
@@ -52,13 +58,13 @@ export default function MemeContainer() {
 
         {/* Right - Window Buttons */}
         <div className="flex space-x-2">
-          <div className="w-7 h-6 flex items-center justify-center bg-rose-800 rounded-md shadow-md cursor-pointer hover:bg-rose-700 transition-all">
+          <div className="w-7 h-6 flex items-center justify-center bg-rose-800 rounded-md shadow-md hover:bg-rose-700 transition-all">
             <i className="fi fi-rr-window-minimize text-white text-sm"></i>
           </div>
-          <div className="w-7 h-6 flex items-center justify-center bg-rose-800 rounded-md shadow-md cursor-pointer hover:bg-rose-700 transition-all">
+          <div className="w-7 h-6 flex items-center justify-center bg-rose-800 rounded-md shadow-md hover:bg-rose-700 transition-all">
             <i className="fi fi-rr-window-restore text-white text-sm"></i>
           </div>
-          <div className="w-7 h-6 flex items-center justify-center bg-rose-800 rounded-md shadow-md cursor-pointer hover:bg-rose-700 transition-all">
+          <div className="w-7 h-6 flex items-center justify-center bg-rose-800 rounded-md shadow-md hover:bg-rose-700 transition-all">
             <i className="fi fi-rr-rectangle-xmark text-white text-sm"></i>
           </div>
         </div>
